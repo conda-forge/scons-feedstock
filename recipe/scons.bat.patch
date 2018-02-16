@@ -1,0 +1,13 @@
+diff -r -u scons-3.0.1.original/scons-3.0.1/script/scons.bat scons-3.0.1/scons-3.0.1/script/scons.bat
+--- scons-3.0.1.original/scons-3.0.1/script/scons.bat	2017-11-14 19:18:26.000000000 -0200
++++ scons-3.0.1/scons-3.0.1/script/scons.bat	2018-02-16 11:57:22.884423600 -0200
+@@ -16,7 +16,8 @@
+ :WinNT
+ setlocal
+ @REM ensure the script will be executed with the Python it was installed for
+-set path=%~dp0;%~dp0..;%path%
++@REM do not set path otherwise this crashes the py36 interpreter on Windows
++@REM set path=%~dp0;%~dp0..;%path%
+ @REM try the script named as the .bat file in current dir, then in Scripts subdir
+ set scriptname=%~dp0%~n0.py
+ if not exist "%scriptname%" set scriptname=%~dp0Scripts\%~n0.py
