@@ -1,6 +1,6 @@
 {% set name = "scons" %}
-{% set version = "3.0.0" %}
-{% set sha256 = "aa5afb33c2bbd33c311e47e912412195739e9ffb2e933534a31f85fba8f3470e" %}
+{% set version = "3.0.1" %}
+{% set sha256 = "24475e38d39c19683bc88054524df018fe6949d70fbd4c69e298d39a0269f173" %}
 
 package:
   name: {{ name|lower }}
@@ -36,6 +36,8 @@ test:
     - SCons.Tool.packaging
     - SCons.Variables
     - SCons.compat
+  commands:
+    - scons --help
 
 about:
   home: http://www.scons.org/
@@ -54,3 +56,4 @@ about:
 extra:
   recipe-maintainers:
     - stuertz
+    - nicoddemus
