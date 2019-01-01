@@ -10,9 +10,6 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    # patch required to fix #2
-    - scons.bat.patch  # [win]
 
 build:
   number: 1000
@@ -21,8 +18,8 @@ build:
 
 requirements:
   build:
-    - setuptools
     - python
+    - setuptools
 
   run:
     - python
@@ -31,7 +28,6 @@ test:
   imports:
     - SCons
     - SCons.Node
-    - SCons.Options
     - SCons.Platform
     - SCons.Scanner
     - SCons.Script
