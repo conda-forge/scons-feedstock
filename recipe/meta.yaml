@@ -1,6 +1,6 @@
 {% set name = "scons" %}
-{% set version = "3.0.1" %}
-{% set sha256 = "24475e38d39c19683bc88054524df018fe6949d70fbd4c69e298d39a0269f173" %}
+{% set version = "3.0.2" %}
+{% set sha256 = "67c77c210ba6e091ac616e6d41d0e97ea20f4f042b0c7b30db637c5fb056bcdc" %}
 
 package:
   name: {{ name|lower }}
@@ -15,7 +15,7 @@ source:
     - scons.bat.patch  # [win]
 
 build:
-  number: 1001
+  number: 1000
   # scons has a custom setup.py script, --standard-lib is a custom option
   script: python setup.py install --standard-lib
 
