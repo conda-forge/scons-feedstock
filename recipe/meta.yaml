@@ -1,6 +1,6 @@
 {% set name = "scons" %}
-{% set version = "3.0.1" %}
-{% set sha256 = "24475e38d39c19683bc88054524df018fe6949d70fbd4c69e298d39a0269f173" %}
+{% set version = "3.0.2" %}
+{% set sha256 = "67c77c210ba6e091ac616e6d41d0e97ea20f4f042b0c7b30db637c5fb056bcdc" %}
 
 package:
   name: {{ name|lower }}
@@ -10,18 +10,18 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    # patch required to fix #2
-    - scons.bat.patch  # [win]
 
 build:
-  number: 1001
+  # be careful of using "noarch: python": we have had trouble in the past in a single platform (#2)
+  # which would not be caught by the noarch package
+  number: 1000
   # scons has a custom setup.py script, --standard-lib is a custom option
   script: python setup.py install --standard-lib
 
 requirements:
   build:
     - python
+    - setuptools
 
   run:
     - python
@@ -30,7 +30,6 @@ test:
   imports:
     - SCons
     - SCons.Node
-    - SCons.Options
     - SCons.Platform
     - SCons.Scanner
     - SCons.Script
