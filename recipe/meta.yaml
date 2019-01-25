@@ -1,6 +1,6 @@
 {% set name = "scons" %}
-{% set version = "3.0.3" %}
-{% set sha256 = "dd878332a77c0f41414e33d332186bc459f3b776dfc98863352e8436af5befe2" %}
+{% set version = "3.0.4" %}
+{% set sha256 = "72c0b56db84f40d3558f351918a0ab98cb4345e8696e879d3e271f4df4a5913c" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 build:
   # be careful of using "noarch: python": we have had trouble in the past in a single platform (#2)
   # which would not be caught by the noarch package
-  number: 1000
+  number: 0
   # scons has a custom setup.py script, --standard-lib is a custom option
   script: python setup.py install --standard-lib
 
