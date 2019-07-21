@@ -1,6 +1,6 @@
 {% set name = "scons" %}
-{% set version = "3.0.5" %}
-{% set sha256 = "e95eaae17d9e490cf12cd37f091a6cbee8a628b5c8dbd3cab1f348f602f46462" %}
+{% set version = "3.1.0" %}
+{% set sha256 = "94e0d0684772d3e6d9368785296716e0ed6ce757270b3ed814e5aa72d3163890" %}
 
 package:
   name: {{ name|lower }}
