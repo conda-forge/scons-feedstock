@@ -46,6 +46,7 @@ about:
   home: http://www.scons.org/
   license: MIT
   license_family: MIT
+  license_file: LICENSE
   summary: 'Open Source next-generation build tool.'
   description: |
     SCons is an Open Source software construction tool that is, a
