@@ -16,6 +16,10 @@ build:
   # which would not be caught by the noarch package
   number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
+  entry_points:
+    - scons = SCons.Script.Main:main
+    - sconsign = SCons.Utilities.sconsign:main
+    - scons-configure-cache = SCons.Utilities.ConfigureCache:main
 
 requirements:
   host:
@@ -39,6 +43,8 @@ test:
     - SCons.compat
   commands:
     - scons --help
+    - sconsign --help
+    - scons-configure-cache --help
 
 about:
   home: http://www.scons.org/
