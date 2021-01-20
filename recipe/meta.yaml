@@ -62,7 +62,7 @@ about:
     similar to autoconf/automake and compiler caches such as ccache. In short,
     SCons is an easier, more reliable and faster way to build software.
   doc_url: http://scons.org/documentation.html
-  dev_url: https://bitbucket.org/scons/scons
+  dev_url: https://github.com/SCons/scons
 
 extra:
   recipe-maintainers:
