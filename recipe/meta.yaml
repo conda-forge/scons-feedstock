@@ -1,6 +1,6 @@
 {% set name = "SCons" %}
-{% set version = "4.0.1" %}
-{% set sha256 = "722ed104b5c624ecdc89bd4e02b094d2b14d99d47b5d0501961e47f579a2007c" %}
+{% set version = "4.1.0.post1" %}
+{% set sha256 = "ecb062482b9d80319b56758c0341eb717735437f86a575bac3552804428bd73e" %}
 
 package:
   name: {{ name|lower }}
@@ -14,8 +14,8 @@ source:
 build:
   # be careful of using "noarch: python": we have had trouble in the past in a single platform (#2)
   # which would not be caught by the noarch package
-  number: 2
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - scons = SCons.Script.Main:main
     - sconsign = SCons.Utilities.sconsign:main
@@ -54,7 +54,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Open Source next-generation build tool.'
+  summary: Open Source next-generation build tool.
   description: |
     SCons is an Open Source software construction tool that is, a
     next-generation build tool. Think of SCons as an improved, cross-platform
@@ -62,7 +62,7 @@ about:
     similar to autoconf/automake and compiler caches such as ccache. In short,
     SCons is an easier, more reliable and faster way to build software.
   doc_url: http://scons.org/documentation.html
-  dev_url: https://bitbucket.org/scons/scons
+  dev_url: https://github.com/SCons/scons
 
 extra:
   recipe-maintainers:
