@@ -1,6 +1,6 @@
 {% set name = "SCons" %}
-{% set version = "4.2.0" %}
-{% set sha256 = "691893b63f38ad14295f5104661d55cb738ec6514421c6261323351c25432b0a" %}
+{% set version = "4.3.0" %}
+{% set sha256 = "d47081587e3675cc168f1f54f0d74a69b328a2fc90ec4feb85f728677419b879" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 build:
   # be careful of using "noarch: python": we have had trouble in the past in a single platform (#2)
   # which would not be caught by the noarch package
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - scons = SCons.Script.Main:main
