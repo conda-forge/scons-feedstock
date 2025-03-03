@@ -1,6 +1,6 @@
 {% set name = "scons" %}
-{% set version = "4.8.1" %}
-{% set sha256 = "5b641357904d2f56f7bfdbb37e165ab996b6143c948b9df0efc7305f54949daa" %}
+{% set version = "4.9.0" %}
+{% set sha256 = "f1a5e161bf3d1411d780d65d7919654b9405555994621d3d68e42d62114b592a" %}
 
 package:
   name: {{ name }}
@@ -8,13 +8,13 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   # be careful of using "noarch: python": we have had trouble in the past in a single platform (#2)
   # which would not be caught by the noarch package
-  number: 1
+  number: 0
   entry_points:
     - scons = SCons.Script.Main:main
     - sconsign = SCons.Utilities.sconsign:main
