@@ -1,6 +1,6 @@
 {% set name = "scons" %}
-{% set version = "4.11.0" %}
-{% set sha256 = "5ba48f9e2eb6b9178cabdc9893792418e6970c84f43f4b027e4468e20616a89c" %}
+{% set version = "4.11.1" %}
+{% set sha256 = "4210d1a80a62e986029208117991b6347ccaaaab37b67463a3ff31ee065dc487" %}
 
 package:
   name: {{ name }}
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
